@@ -15,22 +15,15 @@ public class maximumsumsubarray {
     }
     public static int maxsum(int arr[])
     {
-        int res=Integer.MIN_VALUE;
-        int sum=arr[0];
+        int res=arr[0];
+        int maxending=arr[0];
         for(int i=1;i<arr.length;i++)
         {
-            if(arr[i]>sum)
-            {
-                res=Math.max(res,arr[i]);
-                sum=arr[i];
-            }
-            else
-            {
-                sum=sum+arr[i];
-                res=Math.max(res,sum);
-            }
+            maxending=Math.max(arr[i]+maxending,arr[i]);
+            res=Math.max(res,maxending);
+
         }
-        return res;
+        return maxending;
     }
     public static void main(String[] args) {
         int arr[]={1,-2,3,-1,2};
@@ -39,5 +32,8 @@ public class maximumsumsubarray {
         int arr2[]={2,3,-8,7,-1,2,3};
         System.out.println(maxsumsubarray(arr2));
         System.out.println(maxsum(arr2));
+        int arr3[]={-3,8,-2,4,-5,6};
+        System.out.println(maxsumsubarray(arr3));
+        System.out.println(maxsum(arr3));
     }
 }
