@@ -36,9 +36,33 @@ public class leaderinanarray {
             }
         }
     }
+    public static ArrayList<Integer> leaders(int arr[], int n){
+        ArrayList<Integer> al=new ArrayList<Integer>();
+        int tmp=arr[n-1];
+        al.add(tmp);
+        for(int i=n-2;i>=0;i--)
+        {
+            if(tmp<arr[i])
+            {
+                tmp=arr[i];
+                al.add(tmp);
+            }
+            
+        }
+        ArrayList<Integer> ul=new ArrayList<Integer>();
+        for(int i=0;i<al.size();i++)
+        {
+            ul.add(al.get(al.size()-i-1));
+        }
+        
+        return ul;
+    }
     public static void main(String[] args) {
         int[] arr={7,10,4,3,6,5,2};
         firstfun(arr);
         fun2(arr);
+        ArrayList<Integer> al=new ArrayList<Integer>();
+        al=leaders(arr, arr.length);
+        System.out.print(al);
     }
 }

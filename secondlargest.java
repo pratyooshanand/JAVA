@@ -34,6 +34,8 @@ public class secondlargest {
     }
     public static void main(String[] args) {
         int[] arr={10,20,30,40,50,60};
-        System.out.print(secondlargeindex(arr));
+        System.out.println(secondlargeindex(arr));
+        int[] arr1={10,10,10};
+        System.out.println(secondlargeindex(arr1));
     }
 }
